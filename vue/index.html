@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="core/vue.js"></script>
+    <script src="core/qs.js"></script>
+    <script src="core/router.js"></script>
+    <script src="core/vueloader.js"></script>
+    <script src="core/axios.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="core/element.css">
+     <!-- 引入组件库 -->
+    <script src="core/element.js"></script>
+</head>
+<body>
+<div id="app">
+
+    <div style="text-align: center;height: 80px;">
+        <el-breadcrumb separator="/">
+           导航栏 <router-link :to="{ path: '/' }">首页</router-link>
+            <router-link :to="{ path: '/login' }">登录</router-link>
+        </el-breadcrumb>
+    </div>
+   <router-view></router-view>
+
+</div>
+<script type="module">
+    import router from "./config/router.js"
+    new Vue({
+        el: '#app',
+        router
+    })
+</script>
+</body>
+</html>
